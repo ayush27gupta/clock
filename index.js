@@ -12,10 +12,10 @@ function formatZero(WithZero) {
 
 function time() {
   //time
-  var datex = new Date();
-  var h = datex.getHours();
-  var m = datex.getMinutes();
-  var s = datex.getSeconds();
+  let datex = new Date();
+  let h = datex.getHours();
+  let m = datex.getMinutes();
+  let s = datex.getSeconds();
 
   hours.innerHTML = `${formatZero(h % 12 || 12)}`;
   mins.innerHTML = `${formatZero(m)}`;
@@ -25,3 +25,28 @@ function time() {
 setInterval(time, 1000);
 
 //clock_finished
+
+//changing image with time
+let datex = new Date();
+let h = datex.getHours();
+const h1 = h % 12 || 12;
+const am_pm = h >= 12 ? "PM" : "AM";
+
+const img_text = document.querySelector(".dis");
+const img2 = document.querySelector(".image_chg");
+const greet = document.querySelector(".t1");
+
+if (am_pm === "AM") {
+  img_text.innerHTML = "WAKE UP!!";
+  img2.style.cssText =
+    "background:url(./morning.png);background-color:white ;background-size:100% 100%";
+  greet.innerHTML = "GOOD MORNING !!";
+} else if (h < 4) {
+  img_text.innerHTML = " LET'S HAVE SOME LUNCH !!";
+  greet.innerHTML = "GOOD AFTERNOON !!";
+} else if (h >= 4) {
+  img_text.innerHTML = " GOOD NIGHT !!";
+  img2.style.cssText =
+    "background:url(./night.png); background-color:white; background-size:100% 100%";
+  greet.innerHTML = "GOOD NIGHT !!";
+}
