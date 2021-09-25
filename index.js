@@ -36,17 +36,43 @@ const img_text = document.querySelector(".dis");
 const img2 = document.querySelector(".image_chg");
 const greet = document.querySelector(".t1");
 
-if (am_pm === "AM") {
-  img_text.innerHTML = "WAKE UP!!";
-  img2.style.cssText =
-    "background:url(./morning.png);background-color:white ;background-size:100% 100%";
-  greet.innerHTML = "GOOD MORNING !!";
-} else if (h < 4) {
-  img_text.innerHTML = " LET'S HAVE SOME LUNCH !!";
-  greet.innerHTML = "GOOD AFTERNOON !!";
-} else if (h >= 4) {
-  img_text.innerHTML = " GOOD NIGHT !!";
-  img2.style.cssText =
-    "background:url(./night.png); background-color:white; background-size:100% 100%";
-  greet.innerHTML = "GOOD NIGHT !!";
+decider();
+
+function decider() {
+  if (am_pm === "AM") {
+    img_text.innerHTML = "WAKE UP!!";
+    img2.style.cssText =
+      "background:url(./morning.png);background-color:white ;background-size:100% 100%";
+    greet.innerHTML = "GOOD MORNING !!";
+  } else if (h < 4) {
+    img_text.innerHTML = " LET'S HAVE SOME LUNCH !!";
+    greet.innerHTML = "GOOD AFTERNOON !!";
+  } else if (h >= 4) {
+    img_text.innerHTML = " GOOD NIGHT !!";
+    img2.style.cssText =
+      "background:url(./night.png); background-color:white; background-size:100% 100%";
+    greet.innerHTML = "GOOD NIGHT !!";
+  }
+}
+
+//party image
+
+const party = document.querySelector(".party1");
+
+party.addEventListener("click", partyHandler);
+
+function partyHandler(e) {
+  const img_text2 = document.querySelector(".dis");
+  const img = document.querySelector(".image_chg");
+  const greet2 = document.querySelector(".t1");
+  greet2.innerHTML = "DOUBLE CLICK TO END PARTY !!";
+  img_text.innerHTML = " ABHI TOH PARTY SHURU HUI HAI !!";
+  img.style.cssText =
+    "background:url(./party2.svg); background-color:white; background-size:100% 100%";
+
+  greet2.addEventListener("dblclick", partyKhatam);
+
+  function partyKhatam(e) {
+    decider();
+  }
 }
