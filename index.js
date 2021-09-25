@@ -6,8 +6,8 @@ const secs = document.querySelector(".sec");
 const am = document.querySelector("#am");
 
 //to get right format
-function formatZero(formatted) {
-  return formatted < 10 ? "0".concat(formatted) : formatted;
+function formatZero(WithZero) {
+  return WithZero < 10 ? "0".concat(WithZero) : WithZero;
 }
 
 function time() {
