@@ -44,10 +44,12 @@ function decider() {
     img2.style.cssText =
       "background:url(./morning.png);background-color:white ;background-size:100% 100%";
     greet.innerHTML = "GOOD MORNING !!";
-  } else if (h < 4) {
+  } else if (h1 < 4) {
     img_text.innerHTML = " LET'S HAVE SOME LUNCH !!";
     greet.innerHTML = "GOOD AFTERNOON !!";
-  } else if (h >= 4) {
+    img2.style.cssText =
+      "background:url(./lunch_image.svg);background-color:white ;background-size:100% 100%";
+  } else if (h1 >= 4) {
     img_text.innerHTML = " GOOD NIGHT !!";
     img2.style.cssText =
       "background:url(./night.png); background-color:white; background-size:100% 100%";
@@ -65,11 +67,13 @@ function partyHandler(e) {
   const img_text2 = document.querySelector(".dis");
   const img = document.querySelector(".image_chg");
   const greet2 = document.querySelector(".t1");
+
   greet2.innerHTML = "DOUBLE CLICK TO END PARTY !!";
   img_text.innerHTML = " ABHI TOH PARTY SHURU HUI HAI !!";
   img.style.cssText =
     "background:url(./party2.svg); background-color:white; background-size:100% 100%";
 
+  party = document.querySelector(".party1");
   greet2.addEventListener("dblclick", partyKhatam);
 
   function partyKhatam(e) {
