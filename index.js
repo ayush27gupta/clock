@@ -34,7 +34,11 @@ const h1 = h % 12 || 12;
 const img_text = document.querySelector(".dis");
 const img2 = document.querySelector(".image_chg");
 const greet = document.querySelector(".t1");
+const morning = document.querySelector(".morning");
+const night1 = document.querySelector(".night");
+const day = document.querySelector(".day");
 
+decider();
 function wake() {
   img_text.innerHTML = "WAKE UP!!";
   img_text.style.cssText = "color:#3d087bde;";
@@ -66,44 +70,33 @@ function nacho() {
     "background:url(./dance.jpg);background-color:white ;background-size:100% 100%";
   greet.innerHTML = "NACHO !!";
 }
-nacho();
 
-const morning = document.querySelector(".morning");
+function decider() {
+  morning.addEventListener("change", function () {
+    if (this.value == h) {
+      wake();
+    } else {
+      nacho();
+    }
+  });
 
-morning.addEventListener("change", function () {
-  console.log(this.value);
-  console.log(h1);
-  if (this.value == h1) {
-    wake();
-  } else {
-    nacho();
-  }
-});
+  day.addEventListener("change", function () {
+    if (this.value == h) {
+      lunch();
+    } else {
+      nacho();
+    }
+  });
 
-const day = document.querySelector(".day");
-
-day.addEventListener("change", function () {
-  console.log(this.value);
-  console.log(h1);
-  if (this.value == h1) {
-    lunch();
-  } else {
-    nacho();
-  }
-});
-
-const night1 = document.querySelector(".night");
-
-night1.addEventListener("change", function () {
-  console.log(this.value);
-  console.log(h1);
-  if (this.value == h1) {
-    night();
-  } else {
-    nacho();
-  }
-});
-
+  night1.addEventListener("change", function () {
+    if (this.value == h) {
+      night();
+    } else {
+      nacho();
+    }
+  });
+  nacho();
+}
 //party image
 
 let party = document.querySelector(".party1");
@@ -124,6 +117,6 @@ function partyHandler(e) {
   greet2.addEventListener("dblclick", partyKhatam);
 
   function partyKhatam(e) {
-    nacho();
+    decider();
   }
 }
