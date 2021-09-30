@@ -37,9 +37,11 @@ const greet = document.querySelector(".t1");
 const morning = document.querySelector(".morning");
 const night1 = document.querySelector(".night");
 const day = document.querySelector(".day");
+const partyy = document.querySelector(".party1");
 
 decider();
 function wake() {
+  partyy.innerHTML = "PARTY TIME !!";
   img_text.innerHTML = "WAKE UP!!";
   img_text.style.cssText = "color:#3d087bde;";
   img2.style.cssText =
@@ -48,6 +50,7 @@ function wake() {
 }
 
 function lunch() {
+  partyy.innerHTML = "PARTY TIME !!";
   img_text.innerHTML = " LET'S HAVE SOME LUNCH !!";
   img_text.style.cssText = "color:#3d087bde;";
   greet.innerHTML = "GOOD AFTERNOON !!";
@@ -56,6 +59,7 @@ function lunch() {
 }
 
 function night() {
+  partyy.innerHTML = "PARTY TIME !!";
   img_text.innerHTML = " GOOD NIGHT !!";
   img_text.style.cssText = "color:#3d087bde;";
   img2.style.cssText =
@@ -64,6 +68,7 @@ function night() {
 }
 
 function nacho() {
+  partyy.innerHTML = "PARTY TIME !!";
   img_text.innerHTML = "EVERYBODY LET'S NACHO!!";
   img_text.style.cssText = "color:white";
   img2.style.cssText =
@@ -108,10 +113,12 @@ function partyHandler(e) {
   const img = document.querySelector(".image_chg");
   const greet2 = document.querySelector(".t1");
 
+  partyy.innerHTML = "PARTY KARLO DOMSTO !!";
   greet2.innerHTML = "DOUBLE CLICK TO END PARTY !!";
+  greet2.innerHTML.style = "cursor:pointer";
   img_text.innerHTML = " ABHI TOH PARTY SHURU HUI HAI !!";
   img.style.cssText =
-    "background:url(./party2.svg); background-color:white; background-size:100% 100%";
+    "background:url(./party2.svg); background-color:white; background-size:100% 100% ";
 
   party = document.querySelector(".party1");
   greet2.addEventListener("dblclick", partyKhatam);

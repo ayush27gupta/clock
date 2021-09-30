@@ -175,6 +175,19 @@ body {
   font-weight: 900;
 }
 
+.partyh:hover {
+  background: transparent
+    linear-gradient(
+      -100deg,
+      rgba(110, 84, 236, 1) 0%,
+      rgba(203, 82, 248, 1) 40%,
+      rgba(252, 94, 255, 1) 81%,
+      rgba(241, 167, 197, 1) 100%
+    );
+
+  cursor: pointer;
+}
+
 .wake2 {
   padding-top: 1.5rem;
 }
@@ -186,6 +199,7 @@ body {
 }
 
 select {
+  cursor: pointer;
   width: 10rem;
   height: 2rem;
   background: 0% 0% no-repeat padding-box;
